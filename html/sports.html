@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="../images/rivalus_favicon.png?v=1.1" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sports</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../css/default_style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
+
+        <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+          type="text/javascript" charset="utf-8"></script>
+        <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+          type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <header>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="https://github.com/SmitRao/__HackThe6ix_2018__">GitHub</a></li>
+            </ul>
+            <nav>
+              <div class="nav-wrapper">
+                <a href="#!" class="brand-logo"><img class="header-logo" src="../images/rivalus_logo.png" /></a>
+                <ul class="right hide-on-med-and-down">
+                  <li><a href="sports.html">Sports</a></li>
+                  <li><a href="boardgames.html">Board Games</a></li>
+                  <!-- Dropdown Trigger -->
+                  <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+              </div>
+            </nav>
+        </header>
+        <main>
+          <div style="width: 640px; height: 480px" id="mapContainer"></div>
+          <script>
+            // Initialize the platform object:
+            var platform = new H.service.Platform({
+              'app_id': 'K2g95zwWq2dOJCD0uFjR',
+              'app_code': 'v13Z-BT_141WmgZporwKZQ'
+            });
+
+            // Obtain the default map types from the platform object
+            var maptypes = platform.createDefaultLayers();
+
+            // Instantiate (and display) a map object:
+            var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+              zoom: 10,
+              center: { lat: 43.7, lng: -79.4 }
+            });
+          </script>
+        </main>
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Play everyone. Play for fun.</h5>
+                <p class="grey-text text-lighten-4">We offer many different games to get you started!</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/SmitRao/__HackThe6ix_2018__">GitHub</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright RivalUs Group
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+          (function($){
+            $(function(){
+                $('.dropdown-trigger').dropdown({ coverTrigger: false });
+            }); // end of document ready
+          })(jQuery);
+        </script>
+    </body>
+</html>
